@@ -20,14 +20,14 @@ public class Main {
     private static void processSwap(int[] values, int i, int currentValue) {
         int nextValue = values[i + 1];
         if (nextValue == 0) {
-            processSwapWithNonZeroNext(values, i, currentValue);
+            processSwapWithNextZero(values, i, currentValue);
         } else {
             values[i] = nextValue;
             values[i + 1] = currentValue;
         }
     }
 
-    private static void processSwapWithNonZeroNext(int[] values, int i, int currentValue) {
+    private static void processSwapWithNextZero(int[] values, int i, int currentValue) {
         for (int counter = 2; counter + i < values.length; counter++) {
             int totalCounter = counter + i;
             int next = values[totalCounter];
